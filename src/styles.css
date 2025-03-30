@@ -18,6 +18,12 @@ body {
   color: #333;
 }
 
+/* Dark mode styles */
+.dark body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 46%, #334155 100%);
+  color: #e2e8f0;
+}
+
 /* Glassmorphism Utilities */
 @layer components {
   .glass {
@@ -35,6 +41,12 @@ body {
     border-color: rgba(255, 255, 255, 0.3);
   }
 
+  .dark .glass-card {
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(12px);
+    border-color: rgba(30, 41, 59, 0.5);
+  }
+
   .glass-card-dark {
     @apply glass-dark p-6 transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
   }
@@ -46,11 +58,21 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
+  .dark .glass-btn {
+    background-color: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+  }
+
   .glass-btn-dark {
     @apply glass-dark px-4 py-2 rounded-lg transition-all duration-300 hover:shadow-lg;
   }
   
   .glass-select {
     @apply bg-white bg-opacity-50 border border-glass rounded-md backdrop-blur-md px-2 py-1;
+  }
+
+  .dark .glass-select {
+    @apply bg-slate-800 bg-opacity-50 border border-slate-700 text-white;
   }
 }

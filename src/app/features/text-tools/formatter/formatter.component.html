@@ -1,81 +1,80 @@
-<div class="space-y-6">
-  <section class="glass-card">
-    <h1 class="text-2xl font-bold mb-4">文字排版工具</h1>
-    <p class="mb-4">使用此工具來格式化和排版您的文字，使其更美觀易讀。</p>
+<div class="space-y-2 md:space-y-4">
+  <section class="glass-card p-2 md:p-4">
+    <h1 class="text-lg md:text-2xl font-bold mb-1 md:mb-3">文字排版工具</h1>
   </section>
   
-  <section class="glass-card">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <section class="glass-card p-2 md:p-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-6">
       <div>
-        <h2 class="text-xl font-semibold mb-4">輸入文字</h2>
+        <h2 class="text-sm md:text-xl font-semibold mb-1 md:mb-3">輸入文字</h2>
         <textarea 
-          rows="12"
-          class="w-full p-3 rounded-lg bg-glass backdrop-blur-sm border border-glass focus:outline-none focus:ring-2 focus:ring-primary"
+          rows="6"
+          class="w-full p-2 text-sm md:text-base rounded-lg bg-glass backdrop-blur-sm border border-glass focus:outline-none focus:ring-1 focus:ring-primary"
           placeholder="請在此處輸入您要格式化的文字..."
           [(ngModel)]="inputText"
           (input)="formatText()"
         ></textarea>
-        <div class="mt-2 flex flex-wrap gap-2">
-          <button class="glass-btn text-sm" (click)="clearText()">清空</button>
-          <button class="glass-btn text-sm" (click)="copyInputText()">複製</button>
-          <button class="glass-btn text-sm" (click)="pasteText()">貼上</button>
+        <div class="mt-1 flex flex-wrap gap-1">
+          <button class="glass-btn text-xs py-1 px-2" (click)="clearText()">清空</button>
+          <button class="glass-btn text-xs py-1 px-2" (click)="copyInputText()">複製</button>
+          <button class="glass-btn text-xs py-1 px-2" (click)="pasteText()">貼上</button>
         </div>
       </div>
       
       <div>
-        <h2 class="text-xl font-semibold mb-4">格式化結果</h2>
+        <h2 class="text-sm md:text-xl font-semibold mb-1 md:mb-3">格式化結果</h2>
         <div 
-          class="w-full h-[12rem] p-3 rounded-lg bg-glass backdrop-blur-sm border border-glass overflow-auto whitespace-pre-wrap"
+          class="w-full h-[6rem] md:h-[12rem] p-2 text-sm md:text-base rounded-lg bg-glass backdrop-blur-sm border border-glass overflow-auto whitespace-pre-wrap"
           [innerHTML]="formattedText"
         ></div>
-        <div class="mt-2 flex gap-2">
-          <button class="glass-btn text-sm" (click)="copyFormattedText()">複製結果</button>
+        <div class="mt-1 flex gap-1">
+          <button class="glass-btn text-xs py-1 px-2" (click)="copyFormattedText()">複製結果</button>
         </div>
       </div>
     </div>
   </section>
   
-  <section class="glass-card">
-    <h2 class="text-xl font-semibold mb-4">格式化選項</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="space-y-2">
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" [(ngModel)]="options.removeExtraSpaces" (change)="formatText()" class="rounded">
+  <section class="glass-card p-2 md:p-4">
+    <h2 class="text-sm md:text-xl font-semibold mb-1 md:mb-3">格式化選項</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-4 text-xs md:text-sm">
+      <div class="space-y-1 md:space-y-2">
+        <label class="flex items-center space-x-1">
+          <input type="checkbox" [(ngModel)]="options.removeExtraSpaces" (change)="formatText()" class="rounded h-3 w-3 md:h-4 md:w-4">
           <span>移除多餘空格</span>
         </label>
         
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" [(ngModel)]="options.trimLines" (change)="formatText()" class="rounded">
-          <span>修剪每行前後空白</span>
+        <label class="flex items-center space-x-1">
+          <input type="checkbox" [(ngModel)]="options.trimLines" (change)="formatText()" class="rounded h-3 w-3 md:h-4 md:w-4">
+          <span>修剪行前後空白</span>
         </label>
         
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" [(ngModel)]="options.removeEmptyLines" (change)="formatText()" class="rounded">
+        <label class="flex items-center space-x-1">
+          <input type="checkbox" [(ngModel)]="options.removeEmptyLines" (change)="formatText()" class="rounded h-3 w-3 md:h-4 md:w-4">
           <span>移除空行</span>
         </label>
       </div>
       
-      <div class="space-y-2">
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" [(ngModel)]="options.addPeriod" (change)="formatText()" class="rounded">
+      <div class="space-y-1 md:space-y-2">
+        <label class="flex items-center space-x-1">
+          <input type="checkbox" [(ngModel)]="options.addPeriod" (change)="formatText()" class="rounded h-3 w-3 md:h-4 md:w-4">
           <span>自動補句號</span>
         </label>
         
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" [(ngModel)]="options.convertToFullWidth" (change)="formatText()" class="rounded">
-          <span>轉換為全形標點</span>
+        <label class="flex items-center space-x-1">
+          <input type="checkbox" [(ngModel)]="options.convertToFullWidth" (change)="formatText()" class="rounded h-3 w-3 md:h-4 md:w-4">
+          <span>轉為全形標點</span>
         </label>
         
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" [(ngModel)]="options.addSpaceAfterPunctuation" (change)="formatText()" class="rounded">
-          <span>標點符號後添加空格</span>
+        <label class="flex items-center space-x-1">
+          <input type="checkbox" [(ngModel)]="options.addSpaceAfterPunctuation" (change)="formatText()" class="rounded h-3 w-3 md:h-4 md:w-4">
+          <span>標點後加空格</span>
         </label>
       </div>
       
-      <div class="space-y-2">
+      <div class="space-y-1 md:space-y-2">
         <label class="block">
-          <span class="block mb-1">文字顏色</span>
-          <select [(ngModel)]="options.textColor" (change)="formatText()" class="w-full p-2 rounded-lg bg-glass backdrop-blur-sm border border-glass">
+          <span class="block mb-0.5 md:mb-1">文字顏色</span>
+          <select [(ngModel)]="options.textColor" (change)="formatText()" class="w-full p-1 text-xs md:text-sm rounded-lg bg-glass backdrop-blur-sm border border-glass">
             <option value="">預設</option>
             <option value="text-primary">主要色</option>
             <option value="text-secondary">次要色</option>
@@ -84,8 +83,8 @@
         </label>
         
         <label class="block">
-          <span class="block mb-1">文字大小</span>
-          <select [(ngModel)]="options.fontSize" (change)="formatText()" class="w-full p-2 rounded-lg bg-glass backdrop-blur-sm border border-glass">
+          <span class="block mb-0.5 md:mb-1">文字大小</span>
+          <select [(ngModel)]="options.fontSize" (change)="formatText()" class="w-full p-1 text-xs md:text-sm rounded-lg bg-glass backdrop-blur-sm border border-glass">
             <option value="">預設</option>
             <option value="text-sm">小</option>
             <option value="text-lg">大</option>

@@ -1,80 +1,75 @@
-<div class="space-y-6">
-  <section class="glass-card">
-    <h1 class="text-2xl font-bold mb-4">字數計算工具</h1>
-    <p class="mb-4">使用此工具計算您的文字字數、單詞數量、行數等統計資訊。</p>
+<div class="space-y-2 md:space-y-4">
+  <section class="glass-card p-2 md:p-4">
+    <h1 class="text-lg md:text-2xl font-bold mb-1 md:mb-3">字數計算工具</h1>
   </section>
   
-  <section class="glass-card">
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold mb-3">輸入文字</h2>
+  <section class="glass-card p-2 md:p-4">
+    <div>
+      <h2 class="text-sm md:text-xl font-semibold mb-1 md:mb-3">輸入文字</h2>
       <textarea 
-        rows="10"
-        class="w-full p-3 rounded-lg bg-glass backdrop-blur-sm border border-glass focus:outline-none focus:ring-2 focus:ring-primary"
-        placeholder="請在此處輸入您要計算字數的文字..."
+        rows="5"
+        class="w-full p-2 text-sm md:text-base rounded-lg bg-glass backdrop-blur-sm border border-glass focus:outline-none focus:ring-1 focus:ring-primary"
+        placeholder="請在此處輸入要計算字數的文字..."
         [(ngModel)]="text"
         (input)="calculateStats()"
       ></textarea>
-      <div class="mt-2 flex flex-wrap gap-2">
-        <button class="glass-btn text-sm" (click)="clearText()">清空</button>
-        <button class="glass-btn text-sm" (click)="pasteText()">貼上</button>
+      <div class="mt-1 flex flex-wrap gap-1">
+        <button class="glass-btn text-xs py-1 px-2" (click)="clearText()">清空</button>
+        <button class="glass-btn text-xs py-1 px-2" (click)="pasteText()">貼上</button>
       </div>
     </div>
   </section>
   
-  <section class="glass-card">
-    <h2 class="text-xl font-semibold mb-4">統計結果</h2>
+  <section class="glass-card p-2 md:p-4">
+    <h2 class="text-sm md:text-xl font-semibold mb-1 md:mb-3">統計結果</h2>
     
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-glass p-4 rounded-lg text-center">
-        <div class="text-3xl font-bold text-primary">{{ stats.characters }}</div>
-        <div class="text-sm mt-1">字元 (含空格)</div>
+    <div class="grid grid-cols-2 gap-1 md:gap-3 text-xs md:text-base">
+      <div class="bg-glass p-2 md:p-4 rounded-lg text-center">
+        <div class="text-xl md:text-3xl font-bold text-primary">{{ stats.characters }}</div>
+        <div class="text-xs mt-0.5">字元 (含空格)</div>
       </div>
       
-      <div class="bg-glass p-4 rounded-lg text-center">
-        <div class="text-3xl font-bold text-primary">{{ stats.charactersNoSpaces }}</div>
-        <div class="text-sm mt-1">字元 (不含空格)</div>
+      <div class="bg-glass p-2 md:p-4 rounded-lg text-center">
+        <div class="text-xl md:text-3xl font-bold text-primary">{{ stats.charactersNoSpaces }}</div>
+        <div class="text-xs mt-0.5">字元 (不含空格)</div>
       </div>
       
-      <div class="bg-glass p-4 rounded-lg text-center">
-        <div class="text-3xl font-bold text-primary">{{ stats.words }}</div>
-        <div class="text-sm mt-1">單詞數</div>
+      <div class="bg-glass p-2 md:p-4 rounded-lg text-center">
+        <div class="text-xl md:text-3xl font-bold text-primary">{{ stats.words }}</div>
+        <div class="text-xs mt-0.5">單詞數</div>
       </div>
       
-      <div class="bg-glass p-4 rounded-lg text-center">
-        <div class="text-3xl font-bold text-primary">{{ stats.lines }}</div>
-        <div class="text-sm mt-1">行數</div>
+      <div class="bg-glass p-2 md:p-4 rounded-lg text-center">
+        <div class="text-xl md:text-3xl font-bold text-primary">{{ stats.lines }}</div>
+        <div class="text-xs mt-0.5">行數</div>
       </div>
     </div>
     
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div class="bg-glass p-4 rounded-lg">
-        <h3 class="font-medium mb-2">中文字統計</h3>
-        <div class="text-3xl font-bold text-primary">{{ stats.chineseCharacters }}</div>
-        <div class="text-sm mt-1">中文字數量</div>
+    <div class="mt-1 md:mt-3 grid grid-cols-2 gap-1 md:gap-3 text-xs md:text-base">
+      <div class="bg-glass p-2 md:p-4 rounded-lg">
+        <div class="text-xl md:text-3xl font-bold text-primary">{{ stats.chineseCharacters }}</div>
+        <div class="text-xs mt-0.5">中文字數量</div>
       </div>
       
-      <div class="bg-glass p-4 rounded-lg">
-        <h3 class="font-medium mb-2">段落統計</h3>
-        <div class="text-3xl font-bold text-primary">{{ stats.paragraphs }}</div>
-        <div class="text-sm mt-1">段落數</div>
+      <div class="bg-glass p-2 md:p-4 rounded-lg">
+        <div class="text-xl md:text-3xl font-bold text-primary">{{ stats.paragraphs }}</div>
+        <div class="text-xs mt-0.5">段落數</div>
       </div>
     </div>
   </section>
   
-  <section class="glass-card">
-    <h2 class="text-xl font-semibold mb-4">閱讀時間估計</h2>
+  <section class="glass-card p-2 md:p-4">
+    <h2 class="text-sm md:text-xl font-semibold mb-1 md:mb-3">閱讀時間</h2>
     
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-      <div class="bg-glass p-4 rounded-lg">
-        <h3 class="font-medium mb-2">閱讀時間 (一般速度)</h3>
-        <div class="text-3xl font-bold text-accent">{{ readingTimeNormal }}</div>
-        <div class="text-sm mt-1">基於每分鐘閱讀250個單詞</div>
+    <div class="grid grid-cols-2 gap-1 md:gap-3 text-xs md:text-base">
+      <div class="bg-glass p-2 md:p-4 rounded-lg">
+        <div class="text-xl md:text-3xl font-bold text-accent">{{ readingTimeNormal }}</div>
+        <div class="text-xs mt-0.5">一般速度 (250字/分)</div>
       </div>
       
-      <div class="bg-glass p-4 rounded-lg">
-        <h3 class="font-medium mb-2">閱讀時間 (快速閱讀)</h3>
-        <div class="text-3xl font-bold text-accent">{{ readingTimeFast }}</div>
-        <div class="text-sm mt-1">基於每分鐘閱讀400個單詞</div>
+      <div class="bg-glass p-2 md:p-4 rounded-lg">
+        <div class="text-xl md:text-3xl font-bold text-accent">{{ readingTimeFast }}</div>
+        <div class="text-xs mt-0.5">快速閱讀 (400字/分)</div>
       </div>
     </div>
   </section>

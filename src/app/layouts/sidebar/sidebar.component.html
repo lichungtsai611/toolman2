@@ -1,43 +1,43 @@
 <aside 
-  class="glass fixed left-0 top-16 bottom-0 w-64 transform transition-transform duration-300 z-40 overflow-y-auto"
+  class="glass fixed left-0 top-12 sm:top-16 bottom-0 w-48 sm:w-64 transform transition-transform duration-300 z-40 overflow-y-auto"
   [ngClass]="{'translate-x-0': isOpen, '-translate-x-full': !isOpen, 'md:translate-x-0': true}"
 >
-  <nav class="p-4">
-    <h2 class="text-xl font-bold mb-4">工具類別</h2>
+  <nav class="p-2 sm:p-4">
+    <h2 class="text-lg sm:text-xl font-bold mb-2 sm:mb-4">工具類別</h2>
     
-    <div class="space-y-6">
-      <div class="space-y-2">
+    <div class="space-y-3 sm:space-y-6 text-sm sm:text-base">
+      <div class="space-y-1 sm:space-y-2">
         <h3 class="font-medium text-primary">文字工具</h3>
-        <ul class="space-y-1 pl-2">
-          <li><a routerLink="/tools/text/formatter" class="block py-1 hover:text-primary">文字排版</a></li>
-          <li><a routerLink="/tools/text/counter" class="block py-1 hover:text-primary">字數計算</a></li>
-          <li><a routerLink="/tools/text/case-converter" class="block py-1 hover:text-primary">大小寫轉換</a></li>
+        <ul class="space-y-0 pl-1 sm:space-y-1 sm:pl-2">
+          <li><a routerLink="/tools/text/formatter" class="block py-0.5 sm:py-1 hover:text-primary">文字排版</a></li>
+          <li><a routerLink="/tools/text/counter" class="block py-0.5 sm:py-1 hover:text-primary">字數計算</a></li>
+          <li><a routerLink="/tools/text/case-converter" class="block py-0.5 sm:py-1 hover:text-primary">大小寫轉換</a></li>
         </ul>
       </div>
       
-      <div class="space-y-2">
+      <div class="space-y-1 sm:space-y-2">
         <h3 class="font-medium text-primary">圖片工具</h3>
-        <ul class="space-y-1 pl-2">
-          <li><a routerLink="/tools/image/compressor" class="block py-1 hover:text-primary">圖片壓縮</a></li>
-          <li><a routerLink="/tools/image/converter" class="block py-1 hover:text-primary">格式轉換</a></li>
-          <li><a routerLink="/tools/image/editor" class="block py-1 hover:text-primary">簡易編輯</a></li>
+        <ul class="space-y-0 pl-1 sm:space-y-1 sm:pl-2">
+          <li><a routerLink="/tools/image/compressor" class="block py-0.5 sm:py-1 hover:text-primary">圖片壓縮</a></li>
+          <li><a routerLink="/tools/image/converter" class="block py-0.5 sm:py-1 hover:text-primary">格式轉換</a></li>
+          <li><a routerLink="/tools/image/editor" class="block py-0.5 sm:py-1 hover:text-primary">簡易編輯</a></li>
         </ul>
       </div>
       
-      <div class="space-y-2">
+      <div class="space-y-1 sm:space-y-2">
         <h3 class="font-medium text-primary">轉換工具</h3>
-        <ul class="space-y-1 pl-2">
-          <li><a routerLink="/tools/convert/units" class="block py-1 hover:text-primary">單位換算</a></li>
-          <li><a routerLink="/tools/convert/currency" class="block py-1 hover:text-primary">貨幣轉換</a></li>
-          <li><a routerLink="/tools/convert/time" class="block py-1 hover:text-primary">時區轉換</a></li>
+        <ul class="space-y-0 pl-1 sm:space-y-1 sm:pl-2">
+          <li><a routerLink="/tools/convert/units" class="block py-0.5 sm:py-1 hover:text-primary">單位換算</a></li>
+          <li><a routerLink="/tools/convert/currency" class="block py-0.5 sm:py-1 hover:text-primary">貨幣轉換</a></li>
+          <li><a routerLink="/tools/convert/time" class="block py-0.5 sm:py-1 hover:text-primary">時區轉換</a></li>
         </ul>
       </div>
     </div>
     
-    <div class="mt-8 pt-4 border-t border-glass">
-      <ul class="space-y-2">
-        <li><a routerLink="/about" class="block py-1 hover:text-primary">關於我們</a></li>
-        <li><a routerLink="/contact" class="block py-1 hover:text-primary">聯絡我們</a></li>
+    <div class="mt-4 pt-2 sm:mt-8 sm:pt-4 border-t border-glass">
+      <ul class="space-y-1 sm:space-y-2 text-sm sm:text-base">
+        <li><a routerLink="/about" class="block py-0.5 sm:py-1 hover:text-primary">關於我們</a></li>
+        <li><a routerLink="/contact" class="block py-0.5 sm:py-1 hover:text-primary">聯絡我們</a></li>
       </ul>
     </div>
   </nav>

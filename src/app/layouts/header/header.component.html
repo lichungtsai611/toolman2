@@ -1,18 +1,17 @@
-<header class="glass fixed top-0 left-0 right-0 z-50 px-4 py-3 flex justify-between items-center">
+<header class="glass fixed top-0 left-0 right-0 z-50 px-2 sm:px-4 py-2 sm:py-3 flex justify-between items-center">
   <div class="flex items-center">
-    <a routerLink="/" class="text-2xl font-bold flex items-center">
-      <span class="text-primary">工具</span>
-      <span class="text-accent">寶典</span>
+    <a routerLink="/" class="text-xl sm:text-2xl font-bold flex items-center">
+      <span class="text-primary">快找工具人</span>
     </a>
   </div>
   
-  <div class="flex items-center space-x-4">
-    <button (click)="toggleSidebar()" class="md:hidden glass-btn flex items-center">
-      <span class="material-icons">{{ sidebarOpen ? 'close' : 'menu' }}</span>
+  <div class="flex items-center space-x-2 sm:space-x-4">
+    <button (click)="toggleSidebar()" class="md:hidden glass-btn flex items-center p-1 sm:p-2">
+      <span class="material-icons text-sm sm:text-base">{{ sidebarOpen ? 'close' : 'menu' }}</span>
     </button>
     
-    <button (click)="toggleTheme()" class="glass-btn flex items-center">
-      <span class="material-icons">{{ currentTheme === 'light' ? 'dark_mode' : 'light_mode' }}</span>
+    <button (click)="toggleTheme()" class="glass-btn flex items-center p-1 sm:p-2">
+      <span class="material-icons text-sm sm:text-base">{{ currentTheme === 'light' ? 'dark_mode' : 'light_mode' }}</span>
     </button>
   </div>
 </header>

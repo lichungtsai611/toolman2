@@ -1,25 +1,2 @@
-<div class="min-h-screen flex flex-col">
-  <!-- 主應用頂部導航，只在此處出現一次 -->
-  <app-header></app-header>
-  
-  <!-- 主要內容區域 -->
-  <div class="flex flex-grow main-content">
-    <!-- 側邊欄菜單 (桌面版顯示，手機版隱藏) - 只在此處出現一次 -->
-    <div class="hidden md:block sidebar-container">
-      <app-sidebar></app-sidebar>
-    </div>
-    
-    <!-- 主內容區域 - 子路由內容 -->
-    <main class="flex-grow content-container">
-      <div class="container mx-auto">
-        <!-- 路由出口 - 所有子路由組件在此顯示，不要包含重複的header和sidebar -->
-        <router-outlet></router-outlet>
-      </div>
-    </main>
-  </div>
-  
-  <!-- 頁腳 - 只在此處出現一次 -->
-  <div class="app-footer">
-    <app-footer></app-footer>
-  </div>
-</div>
+<!-- Router outlet for the MainLayoutComponent which already contains header, sidebar, and footer -->
+<router-outlet></router-outlet>

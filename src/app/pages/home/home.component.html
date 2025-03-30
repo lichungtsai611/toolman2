@@ -1,34 +1,33 @@
-<div class="space-y-6">
-  <section class="glass-card text-center mb-6 p-6">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4">歡迎使用<span class="text-primary">工具</span><span class="text-accent">寶典</span></h1>
-    <p class="text-lg mb-4">一個具有美麗玻璃態設計的實用網頁工具集合</p>
-    <p class="text-base mb-2">請從側邊選單或下方卡片選擇一個工具開始使用</p>
+<div class="space-y-3 md:space-y-6">
+  <section class="glass-card text-center mb-2 md:mb-6 p-3 md:p-6">
+    <h1 class="text-2xl md:text-4xl font-bold mb-2 md:mb-4">歡迎使用<span class="text-primary">快找工具人</span></h1>
+    <p class="text-sm md:text-lg mb-1 md:mb-4">具有美麗玻璃態設計的實用工具集合</p>
   </section>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- More compact grid for tools -->
+  <div class="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6">
     <!-- 文字工具類別 -->
-    <div class="glass-card">
-      <div class="flex items-center mb-4">
-        <span class="material-icons text-primary text-3xl mr-3">text_fields</span>
-        <h2 class="text-xl font-semibold">文字工具</h2>
+    <div class="glass-card p-2 md:p-4">
+      <div class="flex items-center mb-1 md:mb-3">
+        <span class="material-icons text-primary text-xl md:text-3xl mr-1 md:mr-3">text_fields</span>
+        <h2 class="text-md md:text-xl font-semibold">文字工具</h2>
       </div>
-      <p class="mb-4">使用我們簡單易用的文字工具來格式化和處理文字。</p>
-      <div class="space-y-2">
-        <a routerLink="/text-tools/formatter" class="block hover:text-primary">
+      <div class="text-xs md:text-base">
+        <a routerLink="/tools/text/formatter" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>文字排版</span>
           </div>
         </a>
-        <a routerLink="/text-tools/counter" class="block hover:text-primary">
+        <a routerLink="/tools/text/counter" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>字數計算</span>
           </div>
         </a>
-        <a routerLink="/text-tools/case-converter" class="block hover:text-primary">
+        <a routerLink="/tools/text/case-converter" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>大小寫轉換</span>
           </div>
         </a>
@@ -36,28 +35,27 @@
     </div>
 
     <!-- 圖片工具類別 -->
-    <div class="glass-card">
-      <div class="flex items-center mb-4">
-        <span class="material-icons text-primary text-3xl mr-3">image</span>
-        <h2 class="text-xl font-semibold">圖片工具</h2>
+    <div class="glass-card p-2 md:p-4">
+      <div class="flex items-center mb-1 md:mb-3">
+        <span class="material-icons text-primary text-xl md:text-3xl mr-1 md:mr-3">image</span>
+        <h2 class="text-md md:text-xl font-semibold">圖片工具</h2>
       </div>
-      <p class="mb-4">使用我們的圖片工具處理和優化您的圖片。</p>
-      <div class="space-y-2">
-        <a routerLink="/image-tools/compressor" class="block hover:text-primary">
+      <div class="text-xs md:text-base">
+        <a routerLink="/tools/image/compressor" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>圖片壓縮</span>
           </div>
         </a>
-        <a routerLink="/image-tools/converter" class="block hover:text-primary">
+        <a routerLink="/tools/image/converter" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>格式轉換</span>
           </div>
         </a>
-        <a routerLink="/image-tools/editor" class="block hover:text-primary">
+        <a routerLink="/tools/image/editor" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>簡易編輯</span>
           </div>
         </a>
@@ -65,28 +63,27 @@
     </div>
 
     <!-- 轉換工具類別 -->
-    <div class="glass-card">
-      <div class="flex items-center mb-4">
-        <span class="material-icons text-primary text-3xl mr-3">swap_horiz</span>
-        <h2 class="text-xl font-semibold">轉換工具</h2>
+    <div class="glass-card p-2 md:p-4">
+      <div class="flex items-center mb-1 md:mb-3">
+        <span class="material-icons text-primary text-xl md:text-3xl mr-1 md:mr-3">swap_horiz</span>
+        <h2 class="text-md md:text-xl font-semibold">轉換工具</h2>
       </div>
-      <p class="mb-4">輕鬆轉換不同的單位和格式。</p>
-      <div class="space-y-2">
-        <a routerLink="/convert-tools/units" class="block hover:text-primary">
+      <div class="text-xs md:text-base">
+        <a routerLink="/tools/convert/units" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>單位換算</span>
           </div>
         </a>
-        <a routerLink="/convert-tools/currency" class="block hover:text-primary">
+        <a routerLink="/tools/convert/currency" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>貨幣轉換</span>
           </div>
         </a>
-        <a routerLink="/convert-tools/time" class="block hover:text-primary">
+        <a routerLink="/tools/convert/time" class="block hover:text-primary py-1">
           <div class="flex items-center">
-            <span class="material-icons text-sm mr-2">arrow_right</span>
+            <span class="material-icons text-xs mr-1">arrow_right</span>
             <span>時區轉換</span>
           </div>
         </a>
@@ -94,23 +91,19 @@
     </div>
     
     <!-- 近期更新區塊 -->
-    <div class="glass-card">
-      <div class="flex items-center mb-4">
-        <span class="material-icons text-primary text-3xl mr-3">update</span>
-        <h2 class="text-xl font-semibold">近期更新</h2>
+    <div class="glass-card p-2 md:p-4">
+      <div class="flex items-center mb-1 md:mb-3">
+        <span class="material-icons text-primary text-xl md:text-3xl mr-1 md:mr-3">update</span>
+        <h2 class="text-md md:text-xl font-semibold">近期更新</h2>
       </div>
-      <div class="space-y-3">
-        <div class="p-3 bg-blue-50 bg-opacity-50 rounded-lg">
-          <h3 class="font-medium">文字排版功能更新</h3>
-          <p class="text-sm mt-1">新增全形半形轉換功能</p>
+      <div class="space-y-1 md:space-y-3 text-xs md:text-base">
+        <div class="p-1 md:p-3 bg-blue-50 bg-opacity-50 rounded-lg">
+          <div class="font-medium">文字排版功能更新</div>
+          <div class="text-xs mt-0.5">全形半形轉換</div>
         </div>
-        <div class="p-3 bg-blue-50 bg-opacity-50 rounded-lg">
-          <h3 class="font-medium">增加繁體中文支援</h3>
-          <p class="text-sm mt-1">所有介面均已本地化為繁體中文</p>
-        </div>
-        <div class="p-3 bg-blue-50 bg-opacity-50 rounded-lg">
-          <h3 class="font-medium">提高效能</h3>
-          <p class="text-sm mt-1">優化載入速度和運行效率</p>
+        <div class="p-1 md:p-3 bg-blue-50 bg-opacity-50 rounded-lg">
+          <div class="font-medium">繁體中文支援</div>
+          <div class="text-xs mt-0.5">介面本地化</div>
         </div>
       </div>
     </div>
