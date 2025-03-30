@@ -1,0 +1,51 @@
+/* 主佈局樣式 */
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.main-content {
+  min-height: calc(100vh - 8rem); /* 調整為頭部+頁腳高度 */
+  background-color: transparent;
+}
+
+/* 使側邊欄在桌面版固定顯示 */
+@media (min-width: 768px) {
+  .sidebar-container {
+    position: sticky;
+    top: 4rem; /* 頭部高度 */
+    height: calc(100vh - 8rem); /* 調整為視窗高度減去頭部和頁腳 */
+    overflow-y: auto;
+    width: 16rem; /* 確保寬度與sidebar組件相同 */
+    flex-shrink: 0; /* 避免收縮 */
+    z-index: 10; /* 確保在內容上層 */
+  }
+}
+
+/* 調整主內容區域 */
+.content-container {
+  flex: 1;
+  overflow-x: hidden;
+  padding: 1.5rem;
+  max-width: calc(100% - 16rem); /* 在桌面版上減去側邊欄寬度 */
+  background-color: rgba(255, 255, 255, 0.5); /* 降低不透明度為半透明 */
+  border-radius: 0.75rem; /* 圓角邊框 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
+  backdrop-filter: blur(12px); /* 加強背景模糊效果 */
+  z-index: 1; /* 低於sidebar和header */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* 添加玻璃邊框效果 */
+}
+
+/* 在移動設備上調整內容區域 */
+@media (max-width: 767px) {
+  .content-container {
+    max-width: 100%; /* 在移動設備上使用全寬 */
+  }
+}
+
+/* 確保頁腳在底部 */
+.app-footer {
+  position: relative;
+  z-index: 10;
+  margin-top: auto; /* 將頁腳推到底部 */
+}

@@ -1,0 +1,76 @@
+<div class="bg-glass backdrop-blur-lg border-r border-glass w-64 overflow-y-auto py-4 shadow-sm">
+  <div class="px-4 mb-6">
+    <h3 class="text-lg font-semibold mb-2">工具類別</h3>
+  </div>
+  
+  <nav class="space-y-1 px-2">
+    <!-- 文字工具 -->
+    <div class="mb-4">
+      <div class="flex items-center px-4 py-2 text-base font-medium bg-blue-100 bg-opacity-60 rounded-md mb-1 backdrop-blur-sm">
+        <span class="material-icons text-primary mr-3 text-lg">text_fields</span>
+        <span>文字工具</span>
+      </div>
+      
+      <div class="ml-6 space-y-1">
+        <a routerLink="/text-tools/formatter" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">subject</span>
+          <span>文字排版</span>
+        </a>
+        <a routerLink="/text-tools/counter" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">format_list_numbered</span>
+          <span>字數計算</span>
+        </a>
+        <a routerLink="/text-tools/case-converter" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">text_format</span>
+          <span>大小寫轉換</span>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 圖片工具 -->
+    <div class="mb-4">
+      <div class="flex items-center px-4 py-2 text-base font-medium bg-blue-100 bg-opacity-60 rounded-md mb-1 backdrop-blur-sm">
+        <span class="material-icons text-primary mr-3 text-lg">image</span>
+        <span>圖片工具</span>
+      </div>
+      
+      <div class="ml-6 space-y-1">
+        <a routerLink="/image-tools/compressor" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">compress</span>
+          <span>圖片壓縮</span>
+        </a>
+        <a routerLink="/image-tools/converter" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">swap_horiz</span>
+          <span>格式轉換</span>
+        </a>
+        <a routerLink="/image-tools/editor" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">edit</span>
+          <span>簡易編輯</span>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 轉換工具 -->
+    <div class="mb-4">
+      <div class="flex items-center px-4 py-2 text-base font-medium bg-blue-100 bg-opacity-60 rounded-md mb-1 backdrop-blur-sm">
+        <span class="material-icons text-primary mr-3 text-lg">swap_horiz</span>
+        <span>轉換工具</span>
+      </div>
+      
+      <div class="ml-6 space-y-1">
+        <a routerLink="/convert-tools/units" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">straighten</span>
+          <span>單位換算</span>
+        </a>
+        <a routerLink="/convert-tools/currency" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">attach_money</span>
+          <span>貨幣轉換</span>
+        </a>
+        <a routerLink="/convert-tools/time" routerLinkActive="bg-blue-100 text-primary" class="flex items-center px-4 py-2 text-sm rounded-md hover:bg-blue-50">
+          <span class="material-icons text-sm mr-2">access_time</span>
+          <span>時區轉換</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>

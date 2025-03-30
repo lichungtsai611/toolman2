@@ -1,0 +1,70 @@
+<header class="bg-glass backdrop-blur-lg border-b border-glass sticky top-0 z-20 shadow-sm h-16">
+  <div class="container mx-auto px-4 h-full">
+    <nav class="flex items-center justify-between h-full">
+      <!-- 左側 - Logo及菜單按鈕 -->
+      <div class="flex items-center">
+        <!-- 側邊欄切換按鈕 (僅在移動版顯示) -->
+        <button class="md:hidden mr-2" (click)="toggleMobileMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
+        <!-- Logo -->
+        <a routerLink="/" class="flex items-center">
+          <img src="assets/images/logo.png" alt="Tool-Man Logo" class="h-8 mr-2">
+          <span class="text-xl font-bold">Tool-Man</span>
+        </a>
+      </div>
+
+      <!-- 桌面版導航 -->
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}" class="hover:text-primary">首頁</a>
+        <a routerLink="/tools" routerLinkActive="text-primary" class="hover:text-primary">工具列表</a>
+        <a routerLink="/about" routerLinkActive="text-primary" class="hover:text-primary">關於我們</a>
+        <a routerLink="/contact" routerLinkActive="text-primary" class="hover:text-primary">聯絡我們</a>
+      </div>
+
+      <!-- 語言選擇器 -->
+      <div class="flex items-center">
+        <select class="glass-select text-sm px-2 py-1 rounded-md bg-white bg-opacity-40 backdrop-blur-md" (change)="changeLanguage($event)">
+          <option value="zh-TW" selected>繁體中文</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </nav>
+  </div>
+
+  <!-- 移動版側邊選單 -->
+  <div class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30" [ngClass]="{'hidden': !isMobileMenuOpen}" (click)="toggleMobileMenu()">
+    <div class="absolute left-0 top-0 bottom-0 w-64 bg-glass backdrop-blur-xl shadow-lg transform transition-transform duration-300" 
+         [ngClass]="{'translate-x-0': isMobileMenuOpen, '-translate-x-full': !isMobileMenuOpen}"
+         (click)="$event.stopPropagation()">
+      <div class="p-4 border-b border-glass">
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-semibold">選單</span>
+          <button (click)="toggleMobileMenu()" class="focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- 移動版導航連結 -->
+      <div class="py-3 px-4 space-y-3">
+        <a routerLink="/" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}" 
+           class="block hover:text-primary" (click)="toggleMobileMenu()">首頁</a>
+        <a routerLink="/tools" routerLinkActive="text-primary" 
+           class="block hover:text-primary" (click)="toggleMobileMenu()">工具列表</a>
+        <a routerLink="/about" routerLinkActive="text-primary" 
+           class="block hover:text-primary" (click)="toggleMobileMenu()">關於我們</a>
+        <a routerLink="/contact" routerLinkActive="text-primary" 
+           class="block hover:text-primary" (click)="toggleMobileMenu()">聯絡我們</a>
+      </div>
+      
+      <!-- 工具類別 -->
+      <app-sidebar class="block md:hidden mt-2"></app-sidebar>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,83 @@
+<div class="space-y-6">
+  <section class="glass-card">
+    <h1 class="text-2xl font-bold mb-4">大小寫轉換工具</h1>
+    <p class="mb-4">使用此工具來轉換文字的大小寫格式，適用於英文文字處理。</p>
+  </section>
+  
+  <section class="glass-card">
+    <div class="mb-6">
+      <h2 class="text-xl font-semibold mb-3">輸入文字</h2>
+      <textarea 
+        rows="8"
+        class="w-full p-3 rounded-lg bg-glass backdrop-blur-sm border border-glass focus:outline-none focus:ring-2 focus:ring-primary"
+        placeholder="請在此處輸入您要轉換大小寫的文字..."
+        [(ngModel)]="inputText"
+      ></textarea>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <button class="glass-btn text-sm" (click)="clearText()">清空</button>
+        <button class="glass-btn text-sm" (click)="pasteText()">貼上</button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="glass-card">
+    <h2 class="text-xl font-semibold mb-4">轉換選項</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <button 
+        class="glass-btn py-3 flex flex-col items-center justify-center"
+        (click)="convertToUppercase()"
+      >
+        <span class="text-lg font-semibold mb-1">全部大寫</span>
+        <span class="text-xs">HELLO WORLD</span>
+      </button>
+      
+      <button 
+        class="glass-btn py-3 flex flex-col items-center justify-center"
+        (click)="convertToLowercase()"
+      >
+        <span class="text-lg font-semibold mb-1">全部小寫</span>
+        <span class="text-xs">hello world</span>
+      </button>
+      
+      <button 
+        class="glass-btn py-3 flex flex-col items-center justify-center"
+        (click)="convertToTitleCase()"
+      >
+        <span class="text-lg font-semibold mb-1">首字大寫</span>
+        <span class="text-xs">Hello World</span>
+      </button>
+      
+      <button 
+        class="glass-btn py-3 flex flex-col items-center justify-center"
+        (click)="convertToSentenceCase()"
+      >
+        <span class="text-lg font-semibold mb-1">句首大寫</span>
+        <span class="text-xs">Hello world. This is a sentence.</span>
+      </button>
+      
+      <button 
+        class="glass-btn py-3 flex flex-col items-center justify-center"
+        (click)="convertToToggleCase()"
+      >
+        <span class="text-lg font-semibold mb-1">大小寫互換</span>
+        <span class="text-xs">hELLO wORLD</span>
+      </button>
+      
+      <button 
+        class="glass-btn py-3 flex flex-col items-center justify-center"
+        (click)="convertToAlternatingCase()"
+      >
+        <span class="text-lg font-semibold mb-1">交替大小寫</span>
+        <span class="text-xs">hElLo WoRlD</span>
+      </button>
+    </div>
+  </section>
+  
+  <section class="glass-card" *ngIf="outputText">
+    <h2 class="text-xl font-semibold mb-4">轉換結果</h2>
+    <div 
+      class="w-full p-3 rounded-lg bg-glass backdrop-blur-sm border border-glass min-h-[100px] mb-3 whitespace-pre-wrap"
+    >{{ outputText }}</div>
+    <button class="glass-btn" (click)="copyToClipboard()">複製結果</button>
+  </section>
+</div>
