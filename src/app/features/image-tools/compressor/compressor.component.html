@@ -1,0 +1,109 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-2xl font-bold mb-6">圖片壓縮工具</h1>
+    
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+      <!-- 拖放區域 -->
+      <div 
+        class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center mb-6"
+        [ngClass]="{'border-primary': isDragging}"
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)"
+        (drop)="onDrop($event)"
+      >
+        <div class="space-y-4">
+          <i class="fas fa-cloud-upload-alt text-4xl text-gray-400"></i>
+          <p class="text-gray-600 dark:text-gray-300">
+            拖放圖片到這裡，或
+            <label class="text-primary hover:text-primary-dark cursor-pointer">
+              <input
+                type="file"
+                class="hidden"
+                accept="image/*"
+                multiple
+                (change)="onFileSelected($event)"
+              >
+              點擊上傳
+            </label>
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            支援的格式：JPG, PNG, GIF, WebP
+          </p>
+        </div>
+      </div>
+
+      <!-- 壓縮設置 -->
+      <div class="mb-6" *ngIf="selectedFiles.length > 0">
+        <h3 class="text-lg font-semibold mb-4">壓縮設置</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              品質 ({{ quality }}%)
+            </label>
+            <input
+              type="range"
+              [(ngModel)]="quality"
+              min="1"
+              max="100"
+              class="w-full"
+            >
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              最大寬度 ({{ maxWidth }}px)
+            </label>
+            <input
+              type="range"
+              [(ngModel)]="maxWidth"
+              min="100"
+              max="4096"
+              step="100"
+              class="w-full"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- 文件列表 -->
+      <div *ngIf="selectedFiles.length > 0">
+        <h3 class="text-lg font-semibold mb-4">已選擇的文件</h3>
+        <div class="space-y-4">
+          <div *ngFor="let file of selectedFiles; let i = index" class="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+            <div class="flex items-center space-x-4">
+              <img [src]="file.preview" class="w-16 h-16 object-cover rounded">
+              <div>
+                <p class="font-medium">{{ file.name }}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  原始大小：{{ formatFileSize(file.size) }}
+                </p>
+              </div>
+            </div>
+            <button
+              class="text-red-500 hover:text-red-600"
+              (click)="removeFile(i)"
+            >
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 操作按鈕 -->
+      <div class="mt-6 flex justify-end space-x-4" *ngIf="selectedFiles.length > 0">
+        <button
+          class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+          (click)="clearFiles()"
+        >
+          清除全部
+        </button>
+        <button
+          class="px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark"
+          (click)="compressImages()"
+          [disabled]="isCompressing"
+        >
+          {{ isCompressing ? '壓縮中...' : '開始壓縮' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div> 

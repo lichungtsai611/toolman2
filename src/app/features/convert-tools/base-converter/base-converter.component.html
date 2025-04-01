@@ -1,0 +1,45 @@
+<div class="container mx-auto p-4">
+  <h1 class="text-2xl font-bold mb-6 text-primary">進位轉換工具</h1>
+  
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- 來源進位 -->
+    <div>
+      <label class="block text-sm font-medium mb-2">從</label>
+      <select [(ngModel)]="fromBase" (ngModelChange)="convert()" 
+              class="w-full p-2 border rounded-lg mb-2 dark:bg-gray-700 dark:border-gray-600">
+        <option *ngFor="let system of baseSystems" [ngValue]="system">{{system.name}}</option>
+      </select>
+      <input type="text" [(ngModel)]="fromValue" (ngModelChange)="convert()" 
+             [class.border-red-500]="!isValidInput"
+             class="w-full p-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600" 
+             placeholder="輸入數值">
+      <p *ngIf="!isValidInput" class="text-red-500 text-sm mt-1">
+        請輸入有效的{{fromBase.name}}數值
+      </p>
+    </div>
+
+    <!-- 目標進位 -->
+    <div>
+      <label class="block text-sm font-medium mb-2">到</label>
+      <select [(ngModel)]="toBase" (ngModelChange)="convert()" 
+              class="w-full p-2 border rounded-lg mb-2 dark:bg-gray-700 dark:border-gray-600">
+        <option *ngFor="let system of baseSystems" [ngValue]="system">{{system.name}}</option>
+      </select>
+      <input type="text" [(ngModel)]="toValue" readonly
+             class="w-full p-2 border rounded-lg bg-gray-50 dark:bg-gray-600 dark:border-gray-500" 
+             placeholder="轉換結果">
+    </div>
+  </div>
+
+  <!-- 常用轉換 -->
+  <div class="mt-8">
+    <h2 class="text-lg font-semibold mb-4">常用轉換</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <button *ngFor="let preset of commonConversions" 
+              (click)="usePreset(preset)"
+              class="p-2 text-sm border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-600">
+        {{preset.from.name}} → {{preset.to.name}}
+      </button>
+    </div>
+  </div>
+</div>
